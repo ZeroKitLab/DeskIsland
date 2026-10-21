@@ -1,0 +1,25 @@
+node_modules
+dist
+src-tauri/target
+src-tauri/gen/schemas
+*.local
+.DS_Store
+generated-images
+vite-dev.log
+
+.env
+.env.*
+!.env.example
+*.log
+*.pdb
+
+# Local editor settings and shared source archives
+.codebuddy/
+.codex/
+.agents/
+.idea/
+*.zip
+
+# Downloaded and verified by scripts/prepare-core.mjs
+src-tauri/resources/mihomo.exe
+src-tauri/resources/.mihomo-download-*/

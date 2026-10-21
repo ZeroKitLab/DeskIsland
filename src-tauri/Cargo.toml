@@ -1,0 +1,32 @@
+[package]
+name = "island"
+version = "0.1.0"
+description = "Windows 灵动岛"
+edition = "2021"
+license = "MIT"
+
+[lib]
+name = "island_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# 网易云歌词接口代理（带浏览器 UA/Referer，规避 CORS）
+ureq = { version = "2", default-features = false, features = ["tls"] }
+urlencoding = "2"
+base64 = "0.22"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.61", features = ["Media_Control", "Foundation_Collections", "Win32_System_WinRT"] }
+windows-future = "0.2"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

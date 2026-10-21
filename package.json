@@ -1,0 +1,35 @@
+{
+  "name": "island",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:desktop": "npm run prepare:core && npm run dev",
+    "build": "tsc && vite build",
+    "build:desktop": "npm run prepare:core && npm run build",
+    "prepare:core": "node scripts/prepare-core.mjs",
+    "check:playback": "node scripts/check-playback.mjs",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "gen-icons": "node scripts/gen-icons.mjs",
+    "postinstall": "npm run gen-icons",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.2.0",
+    "lucide-react": "^0.441.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.2.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.9"
+  }
+}
